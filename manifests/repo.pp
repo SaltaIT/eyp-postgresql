@@ -16,7 +16,7 @@ class postgresql::repo(
     #  deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
     apt::source { 'pgdg':
       location => 'http://apt.postgresql.org/pub/repos/apt/',
-      release  => "${::lsbdistcodename}-pgdg",
+      release  => "${facts}['os']['distro']['codename']-pgdg",
       arch     => 'amd64',
       repos    => 'main',
     }
