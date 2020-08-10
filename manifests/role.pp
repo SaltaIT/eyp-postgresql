@@ -29,7 +29,7 @@ define postgresql::role (
   {
     @postgresql::pgbouncer::username { $rolename:
       password_md5 => $password_hash_sql,
-      tag => $pgbouncer_tag,
+      tag          => $pgbouncer_tag,
     }
   }
 

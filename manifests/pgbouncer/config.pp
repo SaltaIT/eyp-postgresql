@@ -58,10 +58,10 @@ class postgresql::pgbouncer::config inherits postgresql::pgbouncer {
     }
 
     postgresql::hba_rule { 'pgbouncer':
-  		user     => 'pgbouncer',
+      user     => 'pgbouncer',
       database => 'all',
-  		address  => "${postgresql::pgbouncer::src_ip_pgbouncer}/32",
-  	}
+      address  => "${postgresql::pgbouncer::src_ip_pgbouncer}/32",
+    }
 
     #user_authentication-sql.erb
     file { '/etc/pgbouncer/.user_authentication.sql':

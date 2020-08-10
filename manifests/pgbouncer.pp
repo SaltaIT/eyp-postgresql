@@ -24,9 +24,9 @@ class postgresql::pgbouncer (
                 $default_pool_size      = 100,
               ) inherits postgresql::params {
 
-  class { '::postgresql::pgbouncer::install': } ->
-  class { '::postgresql::pgbouncer::config': } ~>
-  class { '::postgresql::pgbouncer::service': } ->
-  Class['::postgresql::pgbouncer']
+  class { 'postgresql::pgbouncer::install': } ->
+  class { 'postgresql::pgbouncer::config': } ~>
+  class { 'postgresql::pgbouncer::service': } ->
+  Class['postgresql::pgbouncer']
 
 }

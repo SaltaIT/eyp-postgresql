@@ -8,7 +8,7 @@ class postgresql::postgis (
     fail('unable to install postgis - unsupported version')
   }
 
-  include ::epel
+  include epel
 
   if(!defined(Package[$postgresql::params::postgis[$version]]))
   {

@@ -119,7 +119,7 @@ class postgresql::params {
 
       $postgresuser='postgres'
       $postgresgroup='postgres'
-      $postgreshome='/var/lib/postgresql'      
+      $postgreshome='/var/lib/postgresql'
 
       $fix_systemd_pg_ctlcluster = true
 
@@ -153,7 +153,7 @@ class postgresql::params {
                               '10'  => [ 'postgresql-client-19' ],
                               '11'  => [ 'postgresql-client-11' ],
                               '12'  => [ 'postgresql-client-12' ],
-                            }  
+                            }
 
       $servicename = {
                         '9.2' => 'postgresql@9.2-main.service',
@@ -188,7 +188,7 @@ class postgresql::params {
         }
         default:
         {
-          $repoprovider = 'apt'                     
+          $repoprovider = 'apt'
 
           case $::operatingsystem
           {
