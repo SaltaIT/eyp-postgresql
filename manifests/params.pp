@@ -35,7 +35,7 @@ class postgresql::params {
               '12' => 'postgresql12-contrib',
             }
 
-  case $::osfamily
+  case $facts['os']['family']
   {
     'redhat':
     {
@@ -100,7 +100,7 @@ class postgresql::params {
                         '12' => 'postgresql-12',
                       }
 
-      case $::operatingsystemrelease
+      case $facts['os']['release']['full']
       {
         /^6.*$/:
         {
@@ -170,11 +170,11 @@ class postgresql::params {
           #raspberry
           $repoprovider = 'raspbian10'
 
-          case $::operatingsystem
+          case $facts['os']['name']
           {
             'Debian':
             {
-              case $::operatingsystemrelease
+              case $facts['os']['release']['full']
               {
                 /^10.*$/:
                 {
@@ -190,11 +190,11 @@ class postgresql::params {
         {
           $repoprovider = 'apt'
 
-          case $::operatingsystem
+          case $facts['os']['name']
           {
             'Ubuntu':
             {
-              case $::operatingsystemrelease
+              case $facts['os']['release']['full']
               {
                 /^14.*$/:
                 {
@@ -213,7 +213,7 @@ class postgresql::params {
             }
             'Debian':
             {
-              case $::operatingsystemrelease
+              case $facts['os']['release']['full']
               {
                 /^8.*$/:
                 {

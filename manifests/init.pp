@@ -174,7 +174,7 @@ class postgresql(
     exec { "mkdir -p ${archive_dir} postgres archive command ${version} ${datadir_path}":
       command => "mkdir -p ${archive_dir}",
       creates => $archive_dir,
-      require => Class['::postgresql::install'],
+      require => Class['postgresql::install'],
       tag     => 'post-recoveryconf',
     }
 
@@ -183,7 +183,7 @@ class postgresql(
       owner  => $archive_dir_user,
       group  => $archive_dir_group,
       mode   => $archive_dir_mode,
-      before => Class['::postgresql::service'],
+      before => Class['postgresql::service'],
       tag    => 'post-recoveryconf',
     }
 
