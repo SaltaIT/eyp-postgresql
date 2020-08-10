@@ -37,7 +37,7 @@ class postgresql::install inherits postgresql {
 
   package { $server_install_package_name:
     ensure  => 'installed',
-    require => Class['postgresql::repo']
+    require => Class['postgresql::repo'],
   }
 
   exec { "mkdir p ${datadir_path}":

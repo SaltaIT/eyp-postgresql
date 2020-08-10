@@ -11,7 +11,7 @@ class postgresql::repo(
   }
   elsif ($postgresql::params::repoprovider=='apt')
   {
-    include ::apt
+    include apt
 
     #  deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
     apt::source { 'pgdg':

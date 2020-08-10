@@ -43,7 +43,7 @@ postgresql::hba_rule { 'postgres trust localhost':
 postgresql::hba_rule { 'all':
   user     => 'all',
   database => 'all',
-  address  => "127.0.0.1/32",
+  address  => '127.0.0.1/32',
 }
 
 class { 'postgresql':

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.6.0
+
+* **INCOMPATIBLE CHANGES**:
+  - dropped support for puppet 3.8
+
 ## 0.5.3
 
 * added forced arch amd64 for Debian
