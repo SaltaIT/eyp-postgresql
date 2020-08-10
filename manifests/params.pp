@@ -110,7 +110,7 @@ class postgresql::params {
         {
           $systemd=true
         }
-        default: { fail("Unsupported version! - ${::operatingsystemrelease}")  }
+        default: { fail("Unsupported version! - ${facts}['os']['release']['full']")  }
       }
     }
     'Debian':
@@ -180,7 +180,7 @@ class postgresql::params {
                 {
                   $systemd=true
                 }
-                default: { fail("Unsupported Debian version! - ${::operatingsystemrelease}")  }
+                default: { fail("Unsupported Debian version! - ${facts}['os']['release']['full']")  }
               }
             }
             default: { fail('Unsupported Debian flavour!')  }
@@ -208,7 +208,7 @@ class postgresql::params {
                 {
                   $systemd=true
                 }
-                default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
+                default: { fail("Unsupported Ubuntu version! - ${facts}['os']['release']['full']")  }
               }
             }
             'Debian':
@@ -227,7 +227,7 @@ class postgresql::params {
                 {
                   $systemd=true
                 }
-                default: { fail("Unsupported Debian version! - ${::operatingsystemrelease}")  }
+                default: { fail("Unsupported Debian version! - ${facts}['os']['release']['full']")  }
               }
             }
             default: { fail('Unsupported Debian flavour!')  }
