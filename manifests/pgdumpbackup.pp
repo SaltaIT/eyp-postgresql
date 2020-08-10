@@ -71,7 +71,7 @@ define postgresql::pgdumpbackup (
       monthday => $monthday_cronjob,
       weekday  => $weekday_cronjob,
       require  => File[ [ "${basedir}/pgdumpbackup.config",
-                          "${basedir}/pgdumpbackup.sh"
+                          "${basedir}/pgdumpbackup.sh",
                       ] ],
     }
   }

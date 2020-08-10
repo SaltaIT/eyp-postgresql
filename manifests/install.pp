@@ -37,7 +37,7 @@ class postgresql::install inherits postgresql {
 
   package { $server_install_package_name:
     ensure  => 'installed',
-    require => Class['::postgresql::repo']
+    require => Class['postgresql::repo']
   }
 
   exec { "mkdir p ${datadir_path}":
@@ -53,7 +53,7 @@ class postgresql::install inherits postgresql {
       package { $postgresql::params::contrib[$version]:
         ensure  => 'installed',
         require => Package[$server_install_package_name],
-        before  => Class['::postgresql::service'],
+        before  => Class['postgresql::service'],
       }
     }
   }

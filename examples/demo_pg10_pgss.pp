@@ -4,7 +4,7 @@ class { 'postgresql':
   checkpoint_segments => '8',
   wal_keep_segments   => '8',
   version             => '10',
-  port                => '5610'
+  port                => '5610',
 }
 
 postgresql::hba_rule { 'test':

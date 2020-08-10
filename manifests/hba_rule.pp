@@ -9,7 +9,7 @@ define postgresql::hba_rule (
                               $order       = '42',
                               $datadir     = $postgresql::datadir,
                             ) {
-  include ::postgresql
+  include postgresql
 
   if($datadir==undef)
   {

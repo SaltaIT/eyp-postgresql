@@ -237,30 +237,30 @@ class postgresql(
 
   if($add_nagios_checks)
   {
-    class { '::postgresql::checks':
+    class { 'postgresql::checks':
       ensure         => $ensure_nagios_checks,
       basedir        => $basedir_nagios_checks,
       add_nrpe_sudos => $add_nrpe_sudos_nagios_checks,
     }
   }
 
-  class { '::postgresql::install': }
+  class { 'postgresql::install': }
 
-  class { '::postgresql::config':
+  class { 'postgresql::config':
     require => Class['::postgresql::install'],
     notify  => Class['::postgresql::config::reload'],
   }
 
-  class { '::postgresql::hba::config':
+  class { 'postgresql::hba::config':
     require => Class['::postgresql::install'],
     notify  => Class['::postgresql::config::reload'],
   }
 
-  class { '::postgresql::config::reload':
+  class { 'postgresql::config::reload':
     require => Class['::postgresql::config'],
   }
 
-  class { '::postgresql::service':
+  class { 'postgresql::service':
     before => Class['::postgresql::config::reload'],
   }
 

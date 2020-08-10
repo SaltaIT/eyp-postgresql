@@ -27,8 +27,8 @@ define postgresql::backup::pgsnapshot (
     path => '/usr/sbin:/usr/bin:/sbin:/bin',
   }
 
-  include ::python
-  include ::lvm
+  include python
+  include lvm
 
   pythonpip { 'psutil':
     ensure => 'present',
@@ -95,7 +95,7 @@ define postgresql::backup::pgsnapshot (
       monthday => $monthday_cronjob,
       weekday  => $weekday_cronjob,
       require  => File[ [ "${confdir}/postgres_snapshot.config",
-                          "${basedir}/pgsnapshot.py"
+                          "${basedir}/pgsnapshot.py",
                       ] ],
     }
   }

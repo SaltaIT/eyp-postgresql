@@ -2,7 +2,7 @@ class postgresql::client(
                           $version = $postgresql::params::version_default,
                         ) inherits postgresql::params {
 
-  include ::postgresql::repo
+  include postgresql::repo
 
   if($postgresql::params::repoprovider!='raspbian10')
   {
