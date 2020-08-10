@@ -29,7 +29,7 @@ class postgresql(
                   $install_contrib                 = false,
                   $initdb                          = true,
                   $overcommit_memory               = '2',
-                  $shmmax                          = Integer($facts['memory']['total_bytes']*824633720832),
+                  $shmmax                          = Integer($facts['memory']['total_bytes'])*824633720832,
                   $shmall                          = ceiling(ceiling(sprintf('%d', $facts['memory']['total_bytes'])*824633720832)/$facts['eyp_postgresql_pagesize']),
                   $set_gzip_pglog_cronjob          = true,
                   $maxdays_gzip_pglog_cronjob      = '6',
