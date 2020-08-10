@@ -163,7 +163,7 @@ class postgresql::params {
                         '12'  => 'postgresql@12-main.service',
                       }
 
-      case $::architecture
+      case $facts['os']['architecture']
       {
         'armv7l':
         {
