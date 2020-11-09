@@ -1,7 +1,7 @@
 {
   "name": "eyp-postgresql",
   "version": "0.6.0",
-  "author": "eyp",
+  "author": "Jordi Prats",
   "summary": "postgresql and pgbounce installation, configuration and management",
   "license": "Apache-2.0",
   "source": "https://github.com/SaltaIT/eyp-postgresql",
