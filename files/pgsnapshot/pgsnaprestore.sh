@@ -125,6 +125,6 @@ class { 'postgresql':
 }
 EOF
 
-/opt/puppet-masterless/localpuppetmaster.sh -d /tmp/postgres -r https://github.com/NTTCom-MS/eyp-postgresql -s /tmp/postgres/manifests/pgrestore.pp -T 3
+/opt/puppet-masterless/localpuppetmaster.sh -d /tmp/postgres -r https://github.com/SaltaIT/eyp-postgresql -s /tmp/postgres/manifests/pgrestore.pp -T 3
 
 exit 0
